@@ -61,6 +61,7 @@ async function getgraph(){
     return data;
 }
 
+
 module.exports={
     getdata,
     getTotal,

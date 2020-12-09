@@ -23,12 +23,6 @@ router.get('/graph',async function(req, res, next) {
   res.render('graph', { resultData: result.rows, totalData:result1.rows });
 });
 
-router.get('/graph',async function(req, res, next) {
-  const result2 = await db.getdata();
-  const result3 = await db.gettopconf();
-  console.log(result.rows);
-  res.render('graph', { resultData: result2.rows, totalData:result3.rows });
-});
 
 module.exports = router;
 
