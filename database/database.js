@@ -19,6 +19,16 @@ async function getdata(){
     return data;
 
 }
+async function getdata2(){
+    const sql = `select "Country/Region" as country,"lat" as lat,"long" as long, "3/23/20" as confirmed
+    from covid19_confirmed_csv 
+    where "3/23/20" > 0
+    order by "3/23/20" desc `
+    const data = await pool.query(sql);
+    //console.log(data);
+    return data;
+
+}
 async function getworld(){
     const sql = `select sum(covid19_confirmed_csv."3/23/20") as date_confirmed,sum(covid19_death_csv."3/23/20") as date_death,sum(covid19_recovered_csv."3/23/20") as date_recover
     from covid19_confirmed_csv , covid19_death_csv , covid19_recovered_csv
@@ -62,6 +72,7 @@ async function getgraph(){
 
 module.exports={
     getdata,
+    getdata2,
     getTotal,
     gettopdeath,
     getworld,
