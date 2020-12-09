@@ -39,24 +39,27 @@
         <% resultData.forEach(function(data){ %>          
         <div class="col-4">
           <div style="background-color: yellow; border-radius: 15px; height: 135px; margin-top: 10px;">
-            <p style="text-align: center; font-size: 35px;">Comfirmed</p>
+            <h1 style="text-align: center; font-size: 45px;">Comfirmed</h1>
             <p style="text-align: center; font-size: 40px;"><%=data.date_confirmed%></p>
             </div>
         </div>
+
         <div class="col-4">
           <div style="background-color: green; border-radius: 15px; height: 135px; margin-top: 10px;">
-            <p style="text-align: center; font-size: 35px;">Recovered</p>
+            <h1 style="text-align: center; font-size: 45px;">Recovered</h1>
             <p style="text-align: center; font-size: 40px;"><%=data.date_recover%></p>
         </div>
+
         </div>
         <div class="col-4">
           <div style="background-color: red; border-radius: 15px; height: 135px; margin-top: 10px;">
-          <p style="text-align: center; font-size: 35px;">Death</p>
+          <h1 style="text-align: center; font-size: 45px;">Death</h1p>
           <p style="text-align: center; font-size: 40px;"><%=data.date_death%></p>
       </div>
+     </div>
       <% }); %>
     </div>
-
+  </div>
     <hr width=100% size=3>
     </div>
       <div class="row">       
