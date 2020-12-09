@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
     <style>
-      #map {
+      #mapid {
         width: 600px;
         height: 400px;
         vertical-align: middle;
@@ -25,6 +26,8 @@
     <a href="/country" class="w3-bar-item w3-button">Country</a>
     <a href="/graph" class="w3-bar-item w3-button">Graph</a>
   </div>
+
+
   <div class="w3-bar w3-green">
     <p style="text-align: center; font-size:48px;">World map Corona virus (Covid-19)</p>
     </div>
@@ -69,6 +72,7 @@
       
       </div>
     </div>
+
 
     <script>
       var mymap = L.map("mapid").setView([13, 100], 6);
