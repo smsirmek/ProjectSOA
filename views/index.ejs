@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>COVID - 19</title>
+    <title>Corona virus</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -81,7 +81,7 @@
 
       '<% resultData.forEach(function(data){ %>'
         var markers = [[
-          "<b><%=data.country%> </b><br> <b> Death : </b> <%=data.death%>",
+          "<b><%=data.country%> </b> <br> <b> Death : </b> <%=data.m_death%>",
           ('<%=data.lat%>'),('<%=data.long%>')
         ]];
         for (var i = 0; i < markers.length; i++) {
