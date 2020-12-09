@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>COVID - 19</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      #map {
+        width: 600px;
+        height: 400px;
+        vertical-align: middle;
+      }
+    </style>
+  
+  </head>
+  
+  <div class="w3-bar w3-black">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="/country" class="w3-bar-item w3-button">Country</a>
+    <a href="/graph" class="w3-bar-item w3-button">Graph</a>
+  </div>
+    
+    <div class="container">
+      <div class="row">
+        
+      </div>
+      <div class="row">
+        <div class="col">
+
+
+          <div class="container" style="padding: 10px;">
+            <div id="mapid" style="width: 100%; height: 600px;"></div>
+          </div>
+
+
+      <div class="row" style="padding: 20px;">
+
+        <div class="w3-bar w3-red">
+        <p style="text-align: center; font-size:48px;">COVID-19 Ranks as a Top 5 Leading Cause of Death</p>
+        </div>
+
+        <div class="container" style="padding: 20px;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">Death</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr><% topData.forEach(function(data){ %>
+            <td>
+                <p></p><%=data.country%></p>
+            </td>
+            <td><%=data.death%></td>       
+          </tr><% }); %>
+        </tbody>
+      </table>
+    </div>
+      
+      </div>
+    </div>
+
+    <script>
+      var mymap = L.map("mapid").setView([13, 100], 6);
+      L.tileLayer(
+        "https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=PbUMTkRHEbFafUVipGDG",
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }
+      ).addTo(mymap);
+
+
+      '<% resultData.forEach(function(data){ %>'
+        var markers = [[
+          "<b><%=data.country%> </b><br> <b> Death : </b> <%=data.death%>",
+          ('<%=data.lat%>'),('<%=data.long%>')
+        ]];
+        for (var i = 0; i < markers.length; i++) {
+          var lat = markers[i][1]
+          var long = markers[i][2]
+          var  marker = L.marker([ lat , long ])
+          .bindPopup(markers[i][0])
+          .openPopup()
+          .addTo(mymap);
+        }
+      '<% }); %>'
+    </script>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

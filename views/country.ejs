@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Country Of COVID - 19</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      #map {position: absolute; top: 0;bottom: 0;left: 0; right: 0;}
+    </style>
+  
+  </head>
+
+  <body style="background-color: #E0E0E0;">
+    
+    <div class="w3-bar w3-black">
+      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="#" class="w3-bar-item w3-button">Country</a>
+      <a href="/graph" class="w3-bar-item w3-button">Graph</a>
+    </div>
+    <div><p>
+      <br>
+    </p></div>
+<div>
+  <h1 style="font-size: 48px; text-align: center;">All Country Covid-19 Information </h1>
+
+</div>
+<hr width=100% size=15>
+
+    <div class="container" >
+      <div class="row" style="text-align: center;">
+
+        <% resultData.forEach(function(data){ %>          
+        <div class="col-4">
+          <div style="background-color: yellow; border-radius: 15px; height: 135px; margin-top: 10px;">
+            <p style="text-align: center; font-size: 35px;">Comfirmed</p>
+            <p style="text-align: center; font-size: 40px;"><%=data.date_confirmed%></p>
+            </div>
+        </div>
+        <div class="col-4">
+          <div style="background-color: green; border-radius: 15px; height: 135px; margin-top: 10px;">
+            <p style="text-align: center; font-size: 35px;">Recovered</p>
+            <p style="text-align: center; font-size: 40px;"><%=data.date_recover%></p>
+        </div>
+        </div>
+        <div class="col-4">
+          <div style="background-color: red; border-radius: 15px; height: 135px; margin-top: 10px;">
+          <p style="text-align: center; font-size: 35px;">Death</p>
+          <p style="text-align: center; font-size: 40px;"><%=data.date_death%></p>
+      </div>
+      <% }); %>
+    </div>
+
+    <hr width=100% size=3>
+    </div>
+      <div class="row">       
+        
+              <div class=" container " style="display: flex;">
+
+                  <table class="table ">
+                      <thead>
+                          <tr></tr>
+                          <th>Country</th>
+                          <th>Province</th>
+                              <th>Confirmed</th>
+                              <th>Recovered</th>
+                              <th>Deaths</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% totalData.forEach(function(data){ %>
+                              <tr>
+                                  <td>
+                                      <%= data.country %>
+                                  </td>
+                                  <td>
+                                    <%= data.province %>
+                                </td>
+                                <td>
+                                  <%= data.date_confirmed %>
+                              </td>
+                                  <td>
+                                      <%= data.date_recover %>
+                                  </td>
+                                  <td>
+                                      <%= data.date_death %>
+                                  </td>
+                              </tr>
+                              <% })  %>
+                      </tbody>
+                  </table>
+              </div> 
+      </div>
+    </div>
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
