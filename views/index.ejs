@@ -20,36 +20,32 @@
     </style>
   
   </head>
-  
+  <!-- tebbar -->
   <div class="w3-bar w3-black">
     <a href="#" class="w3-bar-item w3-button">Home</a>
     <a href="/country" class="w3-bar-item w3-button">Country</a>
     <a href="/graph" class="w3-bar-item w3-button">Graph</a>
   </div>
-
+ <!-- tebbar -->
 
   <div class="w3-bar w3-green">
     <p style="text-align: center; font-size:48px;">World map Corona virus (Covid-19)</p>
     </div>
     <div class="container">
       <div class="row">
-        
       </div>
       <div class="row">
         <div class="col">
-
-
+<!-- map -->
           <div class="container" style="padding: 10px;">
             <div id="mapid" style="width: 100%; height: 600px;"></div>
           </div>
-
-
+<!-- map -->
       <div class="row" style="padding: 20px;">
-
+<!-- top 5 Death -->
         <div class="w3-bar w3-red">
         <p style="text-align: center; font-size:48px;">COVID-19 Ranks as a Top 5 Leading Cause of Death</p>
         </div>
-
         <div class="container" style="padding: 20px;">
       <table class="table">
         <thead>
@@ -59,7 +55,6 @@
           </tr>
         </thead>
         <tbody>
-        
           <tr><% topData.forEach(function(data){ %>
             <td>
                 <p></p><%=data.country%></p>
@@ -69,11 +64,9 @@
         </tbody>
       </table>
     </div>
-      
       </div>
     </div>
-
-
+<!-- map and mark on map script -->
     <script>
       var mymap = L.map("mapid").setView([13, 100], 6);
       L.tileLayer(
@@ -83,7 +76,6 @@
             '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
         }
       ).addTo(mymap);
-
 
       '<% resultData.forEach(function(data){ %>'
         var markers = [[
@@ -100,8 +92,6 @@
         }
       '<% }); %>'
     </script>
-    
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
