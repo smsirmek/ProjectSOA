@@ -66,36 +66,41 @@
     </div>
       <div class="row">       
         
+        <div  class="container" style="text-align: center;">
+          <div class="w3-bar w3-blue">
+          <h1 style="font-size: 48px; text-align: center;"> Information for each country </h1>
+        </div>
+        </div>
               <div class=" container " style="display: flex;">
 
                   <table class="table ">
                       <thead>
-                          <tr></tr>
+                          <tr>
                           <th>Country</th>
                           <th>Province</th>
-                              <th>Confirmed</th>
-                              <th>Recovered</th>
-                              <th>Deaths</th>
+                          <th>Confirmed</th>
+                          <th>Recovered</th>
+                          <th>Deaths</th>
                           </tr>
                       </thead>
                       <body>
                           <% totalData.forEach(function(data){ %>
                               <tr>
-                                  <td>
-                                      <%= data.country %>
-                                  </td>
-                                  <td>
-                                    <%= data.province %>
-                                </td>
-                                <td>
+                              <td>
+                                 <%= data.country %>
+                              </td>
+                              <td>
+                                  <%= data.province %>
+                             </td>
+                              <td>
                                   <%= data.date_confirmed %>
                               </td>
-                                  <td>
-                                      <%= data.date_recover %>
-                                  </td>
-                                  <td>
-                                      <%= data.date_death %>
-                                  </td>
+                               <td>
+                                   <%= data.date_recover %>
+                               </td>
+                               <td>
+                                   <%= data.date_death %>
+                              </td>
                               </tr>
                               <% })  %>
                       </body>
